@@ -15,3 +15,7 @@ with open(read_file_name, 'r', encoding='utf-8') as file:
     file_words_count = len(content.split())
     print(f'Количество слов файла {read_file_name}: {file_words_count}')
 
+    file_dots = content.split('.')
+
+with open(write_file_name, 'w', encoding='utf-8') as file:
+    file.write('!'.join(file_dots))
