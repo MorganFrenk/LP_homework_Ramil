@@ -7,8 +7,10 @@
 read_file_name = 'referat.txt'
 write_file_name = 'referat2.txt'
 
-with open(read_file_name, 'r', encoding='utf-8') as file:
-    content = file.read()
+with open(read_file_name, 'r', encoding='utf-8') as file1, \
+     open(write_file_name, 'w', encoding='utf-8') as file2:
+
+    content = file1.read()
     file_len = len(content)
     print(f'Длина файла {read_file_name} в символах: {file_len}')
 
@@ -17,5 +19,4 @@ with open(read_file_name, 'r', encoding='utf-8') as file:
 
     file_dots = content.split('.')
 
-with open(write_file_name, 'w', encoding='utf-8') as file:
-    file.write('!'.join(file_dots))
+    file2.write('!'.join(file_dots))
